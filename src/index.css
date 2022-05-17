@@ -1,13 +1,255 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: #eee;
+}
+
+a {
+  color: unset !important;
+  text-decoration: none !important;
+}
+
+#app {
+  height: 100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 34.1rem;
+}
+@media all and (max-width: 916px) {
+  .swiper {
+    height: 36rem;
+  }
+}
+@media all and (max-width: 846px) {
+  .swiper {
+    height: 40rem;
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #eee;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 20rem;
+  height: 200px;
+  object-fit: cover;
+}
+.swiper-button-prev {
+  left: 95% !important;
+  top: 5% !important;
+  transform: rotate(90deg);
+  transform-origin: left center;
+  color: #a7a7a7 !important;
+  font-weight: 800;
+}
+.swiper-button-next {
+  left: 95% !important;
+  top: 60% !important;
+  transform: rotate(90deg);
+  transform-origin: left center;
+  color: #a7a7a7 !important;
+  font-weight: 800;
+}
+.payment-modal {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+.cards-icons img {
+  width: 30%;
+}
+.exp-date {
+  margin-right: 20px;
+}
+.payment-data {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+.exp-date {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+.product-details {
+  display: flex;
+  margin-top: 50px;
+}
+
+.product-details img {
+  width: 40%;
+  height: 500px;
+  object-fit: contain;
+}
+
+.product-details > div {
+  width: 60%;
+}
+
+.product-details li {
+  margin: 20px 5px;
+  font-size: 20px;
+  list-style: none;
+}
+
+.product-details li strong {
+  width: 120px;
+  display: inline-block;
+}
+
+.product-details h2 {
+  font-size: 40px;
+  margin-top: 0;
+  margin-left: 20px;
+}
+.product-details-feedback h3 {
+  font-size: 24px;
+  text-align: center;
+}
+.product-details-feedback form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.product-details-feedback > div {
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.feedback {
+  background-color: bisque;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 15px 0;
+}
+
+.feedback h5 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.box {
+  /* position: absolute; */
+  /* top: 20%; */
+  /* left: 20%; */
+  transform: translate(-50%, -50%);
+  margin-top: 10%;
+}
+.input {
+  padding: 10px;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: 2px solid #a7a7a7;
+  border-radius: 50px;
+  box-sizing: border-box;
+  font-size: 10px;
+  color: #a7a7a7;
+  outline: none;
+  transition: 0.5s;
+  background: url("https://static.thenounproject.com/png/101791-200.png")
+    no-repeat left;
+  background-size: 20px;
+}
+.box:hover input {
+  width: 120px;
+  background: transparent;
+  border-radius: 10px;
+}
+i {
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  color: black;
+  transition: 0.2s;
+}
+.box:hover i {
+  opacity: 0;
+}
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #a90000;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Morph shape necessary with bubble or elastic */
+/* .bm-morph-shape {
+  fill: #373a47;
+} */
+
+/* Wrapper for item list */
+/* .bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+} */
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  color: #d1d1d1;
+  margin-bottom: 10px;
+  text-align: left;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+.bm-item:hover {
+  color: #ffffff;
 }

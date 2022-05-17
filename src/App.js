@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { ThemeProvider } from "styled-components";
+import AdminContext from "./contexts/AdminContext";
+import ClientContext from "./contexts/ClientContext";
+import Navigation from "./Navigation";
 
-function App() {
+const App = () => {
+  const lightTheme = {
+    bg: "#eee",
+    text: "black",
+  };
+  const darkTheme = {
+    bg: "black",
+    text: "white",
+  };
+  const [theme, setTheme] = useState("light");
+  const isDarkTheme = theme === "dark";
+  const toggleTheme = () => setTheme(isDarkTheme ? "light" : "dark");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+      <ClientContext>
+        <AdminContext>
+          <Navigation toggleTheme={toggleTheme} />
+        </AdminContext>
+      </ClientContext>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
